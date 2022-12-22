@@ -2,7 +2,7 @@
 <p align="center">
   <a href="https://ukrbublik.github.io/react-awesome-query-builder/" rel="noopener" target="_blank"><img src="https://raw.githubusercontent.com/ukrbublik/react-awesome-query-builder/gh-pages/logo_full_200.png" /></a>
 </p>
-<! --
+<! -- 
 [![travis](https://travis-ci.org/ukrbublik/react-awesome-query-builder.svg?branch=master)](https://travis-ci.com/github/ukrbublik/react-awesome-query-builder) 
 [![Financial Contributors on Open Collective](https://opencollective.com/react-awesome-query-builder/all/badge.svg?label=financial+contributors)](https://opencollective.com/react-awesome-query-builder)
 -->
