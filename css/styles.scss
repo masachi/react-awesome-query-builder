@@ -606,7 +606,7 @@ $rule_actions: ".widget--valuesrc", ".rule--drag-handler", ".rule--header";
 
 .qb-lite {
   @include visible_only_for_hovered_group($group_actions);
-  @include display_only_for_hovered_group($inactive_conjs, $active_conjs);
+  //@include display_only_for_hovered_group($inactive_conjs, $active_conjs);
   @include show_only_for_hovered_rule($rule_actions);
 
   &.qb-dragging {

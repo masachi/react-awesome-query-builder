@@ -339,10 +339,10 @@ const localeSettings = {
   operatorPlaceholder: "Select operator",
   deleteLabel: null,
   addGroupLabel: "Add group",
-  addRuleLabel: "Add rule",
+  addRuleLabel: "新增规则",
   addSubRuleLabel: "Add sub rule",
   delGroupLabel: null,
-  notLabel: "Not",
+  notLabel: "非",
   valueSourcesPopupTitle: "Select value source",
   removeRuleConfirmOptions: {
     title: "Are you sure delete this rule?",

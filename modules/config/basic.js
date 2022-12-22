@@ -5,20 +5,17 @@ import {SqlString, sqlEmptyValue, mongoEmptyValue, spelEscape, spelFixList} from
 import {escapeRegExp, getTitleInListValues} from "../utils/stuff";
 import moment from "moment";
 import {settings as defaultSettings} from "../config/default";
+import TextWidget from "../components/widgets/antd/value/Text";
+import TextAreaWidget from "../components/widgets/antd/value/TextArea";
+import NumberWidget from "../components/widgets/antd/value/Number";
+import SliderWidget from "../components/widgets/antd/value/Slider";
+import SelectWidget from "../components/widgets/antd/value/Select";
+import MultiSelectWidget from "../components/widgets/antd/value/MultiSelect";
+import DateWidget from "../components/widgets/antd/value/Date";
+import DateTimeWidget from "../components/widgets/antd/value/DateTime";
+import TimeWidget from "../components/widgets/antd/value/Time";
 
 const {
-  //vanilla
-  VanillaBooleanWidget,
-  VanillaTextWidget,
-  VanillaTextAreaWidget,
-  VanillaDateWidget,
-  VanillaTimeWidget,
-  VanillaDateTimeWidget,
-  VanillaMultiSelectWidget,
-  VanillaSelectWidget,
-  VanillaNumberWidget,
-  VanillaSliderWidget,
-
   //common
   ValueFieldWidget,
   FuncWidget
@@ -30,7 +27,7 @@ const { ProximityOperator } = Operators;
 
 const conjunctions = {
   AND: {
-    label: "And",
+    label: "并且",
     mongoConj: "$and",
     jsonLogicConj: "and",
     sqlConj: "AND",
@@ -55,7 +52,7 @@ const conjunctions = {
     },
   },
   OR: {
-    label: "Or",
+    label: "或者",
     mongoConj: "$or",
     jsonLogicConj: "or",
     sqlConj: "OR",
@@ -624,7 +621,7 @@ const widgets = {
     valueSrc: "value",
     valueLabel: "String",
     valuePlaceholder: "Enter string",
-    factory: (props) => <VanillaTextWidget {...props} />,
+    factory: (props) => <TextWidget {...props} />,
     formatValue: (val, fieldDef, wgtDef, isForDisplay) => {
       return isForDisplay ? stringifyForDisplay(val) : JSON.stringify(val);
     },
@@ -659,7 +656,7 @@ const widgets = {
     valueSrc: "value",
     valueLabel: "Text",
     valuePlaceholder: "Enter text",
-    factory: (props) => <VanillaTextAreaWidget {...props} />,
+    factory: (props) => <TextAreaWidget {...props} />,
     formatValue: (val, fieldDef, wgtDef, isForDisplay) => {
       return isForDisplay ? stringifyForDisplay(val) : JSON.stringify(val);
     },
@@ -679,7 +676,7 @@ const widgets = {
     type: "number",
     jsType: "number",
     valueSrc: "value",
-    factory: (props) => <VanillaNumberWidget {...props} />,
+    factory: (props) => <NumberWidget {...props} />,
     valueLabel: "Number",
     valuePlaceholder: "Enter number",
     valueLabels: [
@@ -703,7 +700,7 @@ const widgets = {
     type: "number",
     jsType: "number",
     valueSrc: "value",
-    factory: (props) => <VanillaSliderWidget {...props} />,
+    factory: (props) => <SliderWidget {...props} />,
     valueLabel: "Number",
     valuePlaceholder: "Enter number or move slider",
     formatValue: (val, fieldDef, wgtDef, isForDisplay) => {
@@ -720,7 +717,7 @@ const widgets = {
     type: "select",
     jsType: "string",
     valueSrc: "value",
-    factory: (props) => <VanillaSelectWidget {...props} />,
+    factory: (props) => <SelectWidget {...props} />,
     valueLabel: "Value",
     valuePlaceholder: "Select value",
     formatValue: (val, fieldDef, wgtDef, isForDisplay) => {
@@ -738,7 +735,7 @@ const widgets = {
     type: "multiselect",
     jsType: "array",
     valueSrc: "value",
-    factory: (props) => <VanillaMultiSelectWidget {...props} />,
+    factory: (props) => <MultiSelectWidget {...props} />,
     valueLabel: "Values",
     valuePlaceholder: "Select values",
     formatValue: (vals, fieldDef, wgtDef, isForDisplay) => {
@@ -765,7 +762,7 @@ const widgets = {
     type: "date",
     jsType: "string",
     valueSrc: "value",
-    factory: (props) => <VanillaDateWidget {...props} />,
+    factory: (props) => <DateWidget {...props} />,
     dateFormat: "DD.MM.YYYY",
     valueFormat: "YYYY-MM-DD",
     useKeyboard: true,
@@ -801,7 +798,7 @@ const widgets = {
     type: "time",
     jsType: "string",
     valueSrc: "value",
-    factory: (props) => <VanillaTimeWidget {...props} />,
+    factory: (props) => <TimeWidget {...props} />,
     timeFormat: "HH:mm",
     valueFormat: "HH:mm:ss",
     use12Hours: false,
@@ -858,7 +855,7 @@ const widgets = {
     type: "datetime",
     jsType: "string",
     valueSrc: "value",
-    factory: (props) => <VanillaDateTimeWidget {...props} />,
+    factory: (props) => <DateTimeWidget {...props} />,
     timeFormat: "HH:mm",
     dateFormat: "DD.MM.YYYY",
     valueFormat: "YYYY-MM-DD HH:mm:ss",

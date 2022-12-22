@@ -15,9 +15,6 @@ const {
   queryString, sqlFormat, spelFormat, mongodbFormat, jsonLogicFormat, queryBuilderFormat, getTree, ConfigUtils
 } = Utils;
 import AntdConfig from "react-awesome-query-builder/config/antd";
-import MaterialConfig from "react-awesome-query-builder/config/material";
-import MuiConfig from "react-awesome-query-builder/config/mui";
-import BootstrapConfig from "react-awesome-query-builder/config/bootstrap";
 
 
 type TreeValueFormat = "JsonLogic" | "default" | "SpEL" | null;
@@ -75,24 +72,9 @@ export  const with_qb_ant = async (config_fn: ConfigFns, value: TreeValue, value
   await do_with_qb(AntdConfig, config_fn, value, valueFormat, checks, options);
 };
 
-export  const with_qb_material = async (config_fn: ConfigFns, value: TreeValue, valueFormat: TreeValueFormat, checks: ChecksFn, options?: DoOptions) => {
-  await do_with_qb(MaterialConfig, config_fn, value, valueFormat, checks, options);
-};
-
-export  const with_qb_mui = async (config_fn: ConfigFns, value: TreeValue, valueFormat: TreeValueFormat, checks: ChecksFn, options?: DoOptions) => {
-  await do_with_qb(MuiConfig, config_fn, value, valueFormat, checks, options);
-};
-  
-export  const with_qb_bootstrap = async (config_fn: ConfigFns, value: TreeValue, valueFormat: TreeValueFormat, checks: ChecksFn, options?: DoOptions) => {
-  await do_with_qb(BootstrapConfig, config_fn, value, valueFormat, checks, options);
-};
-
 export  const with_qb_skins = async (config_fn: ConfigFns, value: TreeValue, valueFormat: TreeValueFormat, checks: ChecksFn, options?: DoOptions) => {
   await do_with_qb(BasicConfig, config_fn, value, valueFormat, checks, options);
   await do_with_qb(AntdConfig, config_fn, value, valueFormat, checks, options);
-  await do_with_qb(MaterialConfig, config_fn, value, valueFormat, checks, options);
-  await do_with_qb(MuiConfig, config_fn, value, valueFormat, checks, options);
-  await do_with_qb(BootstrapConfig, config_fn, value, valueFormat, checks, options);
 };
   
 const do_with_qb = async (BasicConfig: Config, config_fn: ConfigFns, value: TreeValue, valueFormat: TreeValueFormat, checks: ChecksFn, options?: DoOptions) => {

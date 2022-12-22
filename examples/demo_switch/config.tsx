@@ -3,11 +3,11 @@ import {
   Utils as QbUtils, 
   Widgets, Fields, Config, Settings, SpelConcatPart
 } from "react-awesome-query-builder";
-import MaterialConfig from "react-awesome-query-builder/config/material";
+import AntdConfig from "react-awesome-query-builder/config/antd";
 import ReactSelect from "./select";
 
 export default (): Config => {
-  const InitialConfig = MaterialConfig;
+  const InitialConfig = AntdConfig;
 
   const widgets: Widgets = {
     ...InitialConfig.widgets,

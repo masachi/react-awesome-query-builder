@@ -6,17 +6,10 @@ import {
   // types:
   Operators, Widgets, Fields, Config, Types, Conjunctions, Settings, LocaleSettings, OperatorProximity, Funcs,
 } from "react-awesome-query-builder";
-import ru_RU from "antd/lib/locale-provider/ru_RU";
-import { ruRU } from "@material-ui/core/locale";
+import zh_CN from "antd/lib/locale-provider/zh_CN";
 import AntdConfig from "react-awesome-query-builder/lib/config/antd";
 import AntdWidgets from "react-awesome-query-builder/lib/components/widgets/antd";
 import MaterialConfig from "react-awesome-query-builder/lib/config/material";
-const {
-  FieldSelect,
-  FieldDropdown,
-  FieldCascader,
-  FieldTreeSelect,
-} = AntdWidgets;
 const InitialConfig = AntdConfig; // or BasicConfig or MaterialConfig
 
 const { simulateAsyncFetch } = Utils;
@@ -395,22 +388,21 @@ const types: Types = {
 
 const localeSettings: LocaleSettings = {
   locale: {
-    moment: "ru",
-    antd: ru_RU,
-    material: ruRU,
+    moment: "zh",
+    antd: zh_CN,
   },
   valueLabel: "Value",
   valuePlaceholder: "Value",
-  fieldLabel: "Field",
-  operatorLabel: "Operator",
+  fieldLabel: "字段",
+  operatorLabel: "操作",
   fieldPlaceholder: "Select field",
   operatorPlaceholder: "Select operator",
   deleteLabel: null,
-  addGroupLabel: "Add group",
-  addRuleLabel: "Add rule",
-  addSubRuleLabel: "Add sub rule",
+  addGroupLabel: "新增规则组",
+  addRuleLabel: "新增规则",
+  addSubRuleLabel: "新增子规则",
   delGroupLabel: null,
-  notLabel: "Not",
+  notLabel: "非",
   valueSourcesPopupTitle: "Select value source",
   removeRuleConfirmOptions: {
     title: "Are you sure delete this rule?",

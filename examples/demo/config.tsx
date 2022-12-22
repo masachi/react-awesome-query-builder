@@ -7,15 +7,10 @@ import {
   DateTimeFieldSettings,
 } from "react-awesome-query-builder";
 import moment from "moment";
-import ru_RU from "antd/lib/locale-provider/ru_RU";
-import { ruRU } from "@material-ui/core/locale";
-import { ruRU as muiRuRU } from "@mui/material/locale";
+import zh_CN from "antd/lib/locale-provider/zh_CN";
 
 import AntdConfig from "react-awesome-query-builder/config/antd";
 import AntdWidgets from "react-awesome-query-builder/components/widgets/antd";
-import MaterialConfig from "react-awesome-query-builder/config/material";
-import MuiConfig from "react-awesome-query-builder/config/mui";
-import BootstrapConfig from "react-awesome-query-builder/config/bootstrap";
 const {
   FieldSelect,
   FieldDropdown,
@@ -25,11 +20,7 @@ const {
 const { simulateAsyncFetch } = Utils;
 
 const skinToConfig: Record<string, Config> = {
-  vanilla: BasicConfig,
   antd: AntdConfig,
-  material: MaterialConfig,
-  mui: MuiConfig,
-  bootstrap: BootstrapConfig
 };
 
 export default (skin: string) => {
@@ -188,39 +179,37 @@ export default (skin: string) => {
 
   const localeSettings: LocaleSettings = {
     locale: {
-      moment: "ru",
-      antd: ru_RU,
-      material: ruRU,
-      mui: muiRuRU
+      moment: "zh",
+      antd: zh_CN,
     },
     valueLabel: "Value",
     valuePlaceholder: "Value",
     fieldLabel: "Field",
     operatorLabel: "Operator",
     funcLabel: "Function",
-    fieldPlaceholder: "Select field",
-    funcPlaceholder: "Select function",
+    fieldPlaceholder: "请选择字段",
+    funcPlaceholder: "请选择方法",
     operatorPlaceholder: "Select operator",
-    lockLabel: "Lock",
-    lockedLabel: "Locked",
+    lockLabel: "锁定",
+    lockedLabel: "已锁定",
     deleteLabel: null,
-    addGroupLabel: "Add group",
-    addRuleLabel: "Add rule",
-    addSubRuleLabel: "Add sub rule",
+    addGroupLabel: "新增规则组",
+    addRuleLabel: "新增规则",
+    addSubRuleLabel: "新增子规则",
     delGroupLabel: null,
-    notLabel: "Not",
+    notLabel: "取反",
     valueSourcesPopupTitle: "Select value source",
     removeRuleConfirmOptions: {
-      title: "Are you sure delete this rule?",
-      okText: "Yes",
+      title: "确定删除这条规则？",
+      okText: "确定",
       okType: "danger",
-      cancelText: "Cancel"
+      cancelText: "取消"
     },
     removeGroupConfirmOptions: {
-      title: "Are you sure delete this group?",
-      okText: "Yes",
+      title: "确定删除这个规则组？",
+      okText: "确定",
       okType: "danger",
-      cancelText: "Cancel"
+      cancelText: "取消"
     },
   };
 
@@ -248,8 +237,8 @@ export default (skin: string) => {
     },
     // canReorder: true,
     // canRegroup: true,
-    // showLock: true,
-    // showNot: true,
+    showLock: true,
+    showNot: true,
     // showLabels: true,
     maxNesting: 5,
     canLeaveEmptyGroup: true,

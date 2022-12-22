@@ -16,7 +16,7 @@ const {elasticSearchFormat, queryBuilderFormat, jsonLogicFormat, queryString, _m
 const preStyle = { backgroundColor: "darkgrey", margin: "10px", padding: "10px" };
 const preErrorStyle = { backgroundColor: "lightpink", margin: "10px", padding: "10px" };
 
-const initialSkin = window._initialSkin || "mui";
+const initialSkin = window._initialSkin || "antd";
 const emptyInitValue: JsonTree = {id: uuid(), type: "group"};
 const loadedConfig = loadConfig(initialSkin);
 let initValue: JsonTree = loadedInitValue && Object.keys(loadedInitValue).length > 0 ? loadedInitValue as JsonTree : emptyInitValue;
@@ -398,11 +398,7 @@ const DemoQueryBuilder: React.FC = () => {
     <div>
       <div>
         <select value={state.skin} onChange={changeSkin}>
-          <option key="vanilla">vanilla</option>
           <option key="antd">antd</option>
-          <option key="material">material</option>
-          <option key="mui">mui</option>
-          <option key="bootstrap">bootstrap</option>
         </select>
         <button onClick={resetValue}>reset</button>
         <button onClick={clearValue}>clear</button>

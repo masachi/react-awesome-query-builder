@@ -1,6 +1,7 @@
 export { default as Query } from "./components/QueryContainer";
 export { default as Builder } from "./components/Builder";
 
+import "antd/dist/antd.css";
 import * as Export from "./export";
 import * as Import from "./import";
 import * as Widgets from "./components/widgets/index";

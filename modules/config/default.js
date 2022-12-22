@@ -1,15 +1,12 @@
-import * as Widgets from "../components/widgets";
 import React from "react";
-const {
-  VanillaFieldSelect,
-  VanillaConjs,
-  VanillaButton,
-  VanillaButtonGroup,
-  VanillaProvider,
-  VanillaValueSources,
-  vanillaConfirm,
-  VanillaSwitch,
-} = Widgets;
+import FieldSelect from "../components/widgets/antd/core/FieldSelect";
+import Switch from "../components/widgets/antd/core/Switch";
+import Button from "../components/widgets/antd/core/Button";
+import ButtonGroup from "../components/widgets/antd/core/ButtonGroup";
+import ValueSources from "../components/widgets/antd/core/ValueSources";
+import Provider from "../components/widgets/antd/core/Provider";
+import Conjs from "../components/widgets/antd/core/Conjs";
+import confirm from "../components/widgets/antd/core/confirm";
 
 export const settings = {
   formatField: (field, parts, label2, fieldDefinition, config, isForDisplay) => {
@@ -19,16 +16,16 @@ export const settings = {
       return field;
   },
 
-  renderField: (props) => <VanillaFieldSelect {...props} />,
-  renderOperator: (props) => <VanillaFieldSelect {...props} />,
-  renderFunc: (props) => <VanillaFieldSelect {...props} />,
-  renderConjs: (props) => <VanillaConjs {...props} />,
-  renderSwitch: (props) => <VanillaSwitch {...props} />,
-  renderButton: (props) => <VanillaButton {...props} />,
-  renderButtonGroup: (props) => <VanillaButtonGroup {...props} />,
-  renderProvider: (props) => <VanillaProvider {...props} />,
-  renderValueSources: (props) => <VanillaValueSources {...props} />,
-  renderConfirm: vanillaConfirm,
+  renderField: (props) => <FieldSelect {...props} />,
+  renderOperator: (props) => <FieldSelect {...props} />,
+  renderFunc: (props) => <FieldSelect {...props} />,
+  renderConjs: (props) => <Conjs {...props} />,
+  renderSwitch: (props) => <Switch {...props} />,
+  renderButton: (props) => <Button {...props} />,
+  renderButtonGroup: (props) => <ButtonGroup {...props} />,
+  renderProvider: (props) => <Provider {...props} />,
+  renderValueSources: (props) => <ValueSources {...props} />,
+  renderConfirm: confirm,
   renderSwitchPrefix: () => <>{"Conditions"}</>,
 
   valueSourcesInfo: {
